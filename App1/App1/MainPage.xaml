@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.MainPage"
+             Title="LoginPage" WidthRequest="20" Padding="20" BackgroundColor="#28AECB">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Image Source="user"
+       WidthRequest="{OnPlatform Android=150}"
+       HorizontalOptions="Center" />
+        <StackLayout Spacing="20" Padding="50" VerticalOptions="Center">
+            <Entry Placeholder="Username"></Entry>
+            <Entry Placeholder="Password" IsPassword="True"></Entry>
+            <Button Text="Log In" TextColor="Red" BackgroundColor="#7cff7f"
+                    CornerRadius="10">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale"
+                            Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="Scale"
+                            Value="0.8" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+            <Label Text="Or" HorizontalOptions="Center" TextColor="Red" FontSize="20" TextDecorations="Underline"/>
+            <Button Text="Sign Up" BackgroundColor="Yellow"  CornerRadius="10" Clicked="btn_clicked"/>
+        </StackLayout>
+        
+    </StackLayout>
+</ContentPage>
